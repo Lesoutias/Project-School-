@@ -12,7 +12,13 @@ namespace Gestion_Inscription
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new Form1());
-            Application.Run(new FrmPrincipal());
+            //Application.Run(new FrmPrincipal());
+            //Application.Run(new FrmSaisieControle());
+            //Application.Run(new FrmTextBoxMultiligne());
+            //Application.Run(new FrmListeDeroulande());
+            //Application.Run(new FrmCheckbox());
+            Application.Run(new FrmListe());
+
         }
     }
 }
