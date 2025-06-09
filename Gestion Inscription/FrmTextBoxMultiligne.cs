@@ -29,8 +29,13 @@ namespace Gestion_Inscription
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            textBoxMultiline.Text += textSaisie.Text+Environment.NewLine;
+            textBoxMultiline.Text += textSaisie.Text + Environment.NewLine;
             textSaisie.Clear();
+        }
+
+        private void textBoxMultiline_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,16 +10,19 @@ namespace Gestion_Inscription
         private void btn_Afficher_MouseClick(object sender, MouseEventArgs e)
         {
             //MessageBox.Show("Nous sommes en C#");
-            if (txt_Message.Text != "") 
+            if (txt_Message.Text != "")
             {
                 MessageBox.Show(txt_Message.Text, "Afficher Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else 
+            else
             {
                 MessageBox.Show("Erreur, pas de message", "Afficher Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        
+        private void btn_Afficher_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

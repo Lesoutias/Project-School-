@@ -56,7 +56,7 @@ namespace Gestion_Inscription
 
         private void FrmCheckbox_Load(object sender, EventArgs e)
         {
-            rbMaculin.Checked = true;
+           rbMaculin.Checked = true;
         }
     }
 }

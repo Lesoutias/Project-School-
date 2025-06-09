@@ -36,7 +36,7 @@
             // lbl_message
             // 
             lbl_message.AutoSize = true;
-            lbl_message.Location = new Point(30, 80);
+            lbl_message.Location = new Point(83, 96);
             lbl_message.Name = "lbl_message";
             lbl_message.Size = new Size(67, 20);
             lbl_message.TabIndex = 0;
@@ -51,19 +51,20 @@
             // 
             // btn_Afficher
             // 
-            btn_Afficher.Location = new Point(265, 165);
+            btn_Afficher.Location = new Point(246, 165);
             btn_Afficher.Name = "btn_Afficher";
             btn_Afficher.Size = new Size(94, 29);
             btn_Afficher.TabIndex = 2;
             btn_Afficher.Text = "Afficher";
             btn_Afficher.UseVisualStyleBackColor = true;
+            btn_Afficher.Click += btn_Afficher_Click;
             btn_Afficher.MouseClick += btn_Afficher_MouseClick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(452, 340);
             Controls.Add(btn_Afficher);
             Controls.Add(txt_Message);
             Controls.Add(lbl_message);

@@ -64,9 +64,8 @@
             lblControle.ForeColor = SystemColors.Highlight;
             lblControle.Location = new Point(219, 151);
             lblControle.Name = "lblControle";
-            lblControle.Size = new Size(70, 28);
+            lblControle.Size = new Size(0, 28);
             lblControle.TabIndex = 2;
-            lblControle.Text = "label3";
             // 
             // txtSaisie
             // 

@@ -42,6 +42,7 @@
             textBoxMultiline.Name = "textBoxMultiline";
             textBoxMultiline.Size = new Size(401, 236);
             textBoxMultiline.TabIndex = 0;
+            textBoxMultiline.TextChanged += textBoxMultiline_TextChanged;
             // 
             // btnAjouter
             // 

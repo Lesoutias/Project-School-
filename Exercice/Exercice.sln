@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice", "Exercice.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion Inscription", "..\Gestion Inscription\Gestion Inscription.csproj", "{4FF9DA09-AD7F-4A94-A50B-35B465C42A51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inscriptiondb", "..\Inscriptiondb\Inscriptiondb.csproj", "{15FB7228-FA83-41A7-8D54-FA6BD47F45B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4FF9DA09-AD7F-4A94-A50B-35B465C42A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FF9DA09-AD7F-4A94-A50B-35B465C42A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FF9DA09-AD7F-4A94-A50B-35B465C42A51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15FB7228-FA83-41A7-8D54-FA6BD47F45B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15FB7228-FA83-41A7-8D54-FA6BD47F45B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15FB7228-FA83-41A7-8D54-FA6BD47F45B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15FB7228-FA83-41A7-8D54-FA6BD47F45B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
