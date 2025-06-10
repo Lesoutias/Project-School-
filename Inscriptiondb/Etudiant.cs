@@ -23,5 +23,20 @@ namespace Inscriptiondb
         public string Etatcivile { get => etatcivile; set => etatcivile = value; }
         public string Datenaissance { get => datenaissance; set => datenaissance = value; }
         public string Lieunaissance { get => lieunaissance; set => lieunaissance = value; }
+
+        public void Ajouter()
+        {
+
+        }
+
+        public void Modifier()
+        {
+
+        }
+
+        public void Supprimer()
+        {
+
+        }
     }
 }

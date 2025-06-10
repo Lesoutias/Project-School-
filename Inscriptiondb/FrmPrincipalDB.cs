@@ -45,5 +45,17 @@ namespace Inscriptiondb
             frmPromotion.StartPosition = FormStartPosition.CenterScreen;
             frmPromotion.Show();
         }
+
+        private void FrmPrincipalDB_Load(object sender, EventArgs e)
+        {
+            if (DataAccess.Instance.OpenConection())
+            {
+                MessageBox.Show("Connexion reussie", "Connection",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else 
+            {
+                MessageBox.Show("Connection Echoue", "Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

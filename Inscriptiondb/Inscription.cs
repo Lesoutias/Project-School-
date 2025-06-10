@@ -21,5 +21,20 @@ namespace Inscriptiondb
         public string AnneeAcademinque1 { get => AnneeAcademinque; set => AnneeAcademinque = value; }
         public string DateInscription { get => dateInscription; set => dateInscription = value; }
         public string Observation { get => observation; set => observation = value; }
+
+        public void Ajouter()
+        {
+
+        }
+
+        public void Modifier()
+        {
+
+        }
+
+        public void Supprimer()
+        {
+
+        }
     }
 }

@@ -42,7 +42,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fenetresToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(1083, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -57,21 +57,21 @@
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(224, 26);
+            toolStripMenuItem1.Size = new Size(162, 26);
             toolStripMenuItem1.Text = "Etudiant";
             toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // inscriptionToolStripMenuItem
             // 
             inscriptionToolStripMenuItem.Name = "inscriptionToolStripMenuItem";
-            inscriptionToolStripMenuItem.Size = new Size(224, 26);
+            inscriptionToolStripMenuItem.Size = new Size(162, 26);
             inscriptionToolStripMenuItem.Text = "Inscription";
             inscriptionToolStripMenuItem.Click += inscriptionToolStripMenuItem_Click;
             // 
             // promotionToolStripMenuItem
             // 
             promotionToolStripMenuItem.Name = "promotionToolStripMenuItem";
-            promotionToolStripMenuItem.Size = new Size(224, 26);
+            promotionToolStripMenuItem.Size = new Size(162, 26);
             promotionToolStripMenuItem.Text = "Promotion";
             promotionToolStripMenuItem.Click += promotionToolStripMenuItem_Click;
             // 
@@ -79,13 +79,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1083, 647);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "FrmPrincipalDB";
-            Text = "FrmPrincipalDB";
+            Text = "Gestion Inscription";
             WindowState = FormWindowState.Maximized;
+            Load += FrmPrincipalDB_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
