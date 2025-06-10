@@ -116,6 +116,7 @@
             btnAjouterPromotion.TabIndex = 7;
             btnAjouterPromotion.Text = "Ajouter";
             btnAjouterPromotion.UseVisualStyleBackColor = true;
+            btnAjouterPromotion.Click += btnAjouterPromotion_Click;
             // 
             // btnModifierPromotion
             // 
@@ -126,6 +127,7 @@
             btnModifierPromotion.TabIndex = 8;
             btnModifierPromotion.Text = "Modifier";
             btnModifierPromotion.UseVisualStyleBackColor = true;
+            btnModifierPromotion.Click += btnModifierPromotion_Click;
             // 
             // btnSupprimerPromotion
             // 
@@ -136,6 +138,7 @@
             btnSupprimerPromotion.TabIndex = 9;
             btnSupprimerPromotion.Text = "Supprimer";
             btnSupprimerPromotion.UseVisualStyleBackColor = true;
+            btnSupprimerPromotion.Click += btnSupprimerPromotion_Click;
             // 
             // dgPromotion
             // 
@@ -145,6 +148,7 @@
             dgPromotion.RowHeadersWidth = 51;
             dgPromotion.Size = new Size(585, 264);
             dgPromotion.TabIndex = 10;
+            dgPromotion.CellDoubleClick += dgPromotion_CellDoubleClick;
             // 
             // FrmPromotion
             // 
@@ -164,6 +168,7 @@
             Controls.Add(label1);
             Name = "FrmPromotion";
             Text = "FrmPromotion";
+            Load += FrmPromotion_Load;
             ((System.ComponentModel.ISupportInitialize)dgPromotion).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -21,7 +21,10 @@ namespace Inscriptiondb
                 }
                 return instance; 
             } 
+
         }
+
+        public SqlConnection Conn { get => conn; set => conn = value; }
 
         SqlConnection conn = null;
 
@@ -30,8 +33,8 @@ namespace Inscriptiondb
             //try
             //{
                 string connectionString = "data source = DESKTOP-T8O1S1A\\SQLEXPRESS ;initial catalog = BdInscription   ;  persist security info = True; Integrated Security = SSPI; encrypt=false";
-                conn = new SqlConnection(connectionString);
-                conn.Open();
+                Conn = new SqlConnection(connectionString);
+                Conn.Open();
                 return true;
             //}
             //catch (Exception ex)
