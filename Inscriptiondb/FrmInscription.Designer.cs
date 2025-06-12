@@ -36,14 +36,16 @@
             label6 = new Label();
             label7 = new Label();
             txtId = new TextBox();
-            txtMatEt = new TextBox();
-            txtCodeProm = new TextBox();
             txtDateInscr = new TextBox();
             txtObserv = new TextBox();
             btnAjouterInscription = new Button();
             btnModifierInscription = new Button();
             btnSupprimerInscription = new Button();
             cmbAnneeAcad = new ComboBox();
+            dgvInscription = new DataGridView();
+            cmbMat = new ComboBox();
+            cmbProm = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvInscription).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -119,30 +121,17 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(361, 160);
+            txtId.Enabled = false;
+            txtId.Location = new Point(364, 160);
             txtId.Name = "txtId";
-            txtId.Size = new Size(413, 27);
+            txtId.Size = new Size(306, 27);
             txtId.TabIndex = 7;
-            // 
-            // txtMatEt
-            // 
-            txtMatEt.Location = new Point(361, 246);
-            txtMatEt.Name = "txtMatEt";
-            txtMatEt.Size = new Size(413, 27);
-            txtMatEt.TabIndex = 8;
-            // 
-            // txtCodeProm
-            // 
-            txtCodeProm.Location = new Point(361, 339);
-            txtCodeProm.Name = "txtCodeProm";
-            txtCodeProm.Size = new Size(413, 27);
-            txtCodeProm.TabIndex = 9;
             // 
             // txtDateInscr
             // 
             txtDateInscr.Location = new Point(361, 523);
             txtDateInscr.Name = "txtDateInscr";
-            txtDateInscr.Size = new Size(413, 27);
+            txtDateInscr.Size = new Size(306, 27);
             txtDateInscr.TabIndex = 10;
             // 
             // txtObserv
@@ -150,23 +139,24 @@
             txtObserv.Location = new Point(361, 610);
             txtObserv.Multiline = true;
             txtObserv.Name = "txtObserv";
-            txtObserv.Size = new Size(413, 218);
+            txtObserv.Size = new Size(309, 173);
             txtObserv.TabIndex = 11;
             // 
             // btnAjouterInscription
             // 
             btnAjouterInscription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAjouterInscription.Location = new Point(360, 888);
+            btnAjouterInscription.Location = new Point(281, 843);
             btnAjouterInscription.Name = "btnAjouterInscription";
             btnAjouterInscription.Size = new Size(104, 39);
             btnAjouterInscription.TabIndex = 12;
             btnAjouterInscription.Text = "Ajouter";
             btnAjouterInscription.UseVisualStyleBackColor = true;
+            btnAjouterInscription.Click += btnAjouterInscription_Click;
             // 
             // btnModifierInscription
             // 
             btnModifierInscription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModifierInscription.Location = new Point(503, 888);
+            btnModifierInscription.Location = new Point(423, 843);
             btnModifierInscription.Name = "btnModifierInscription";
             btnModifierInscription.Size = new Size(104, 39);
             btnModifierInscription.TabIndex = 13;
@@ -176,7 +166,7 @@
             // btnSupprimerInscription
             // 
             btnSupprimerInscription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSupprimerInscription.Location = new Point(648, 888);
+            btnSupprimerInscription.Location = new Point(567, 843);
             btnSupprimerInscription.Name = "btnSupprimerInscription";
             btnSupprimerInscription.Size = new Size(126, 39);
             btnSupprimerInscription.TabIndex = 14;
@@ -188,22 +178,48 @@
             cmbAnneeAcad.FormattingEnabled = true;
             cmbAnneeAcad.Location = new Point(360, 432);
             cmbAnneeAcad.Name = "cmbAnneeAcad";
-            cmbAnneeAcad.Size = new Size(414, 28);
+            cmbAnneeAcad.Size = new Size(307, 28);
             cmbAnneeAcad.TabIndex = 15;
+            // 
+            // dgvInscription
+            // 
+            dgvInscription.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInscription.Location = new Point(714, 160);
+            dgvInscription.Name = "dgvInscription";
+            dgvInscription.RowHeadersWidth = 51;
+            dgvInscription.Size = new Size(687, 722);
+            dgvInscription.TabIndex = 16;
+            // 
+            // cmbMat
+            // 
+            cmbMat.FormattingEnabled = true;
+            cmbMat.Location = new Point(364, 251);
+            cmbMat.Name = "cmbMat";
+            cmbMat.Size = new Size(303, 28);
+            cmbMat.TabIndex = 17;
+            // 
+            // cmbProm
+            // 
+            cmbProm.FormattingEnabled = true;
+            cmbProm.Location = new Point(364, 339);
+            cmbProm.Name = "cmbProm";
+            cmbProm.Size = new Size(301, 28);
+            cmbProm.TabIndex = 18;
             // 
             // FrmInscription
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1001, 987);
+            ClientSize = new Size(1413, 987);
+            Controls.Add(cmbProm);
+            Controls.Add(cmbMat);
+            Controls.Add(dgvInscription);
             Controls.Add(cmbAnneeAcad);
             Controls.Add(btnSupprimerInscription);
             Controls.Add(btnModifierInscription);
             Controls.Add(btnAjouterInscription);
             Controls.Add(txtObserv);
             Controls.Add(txtDateInscr);
-            Controls.Add(txtCodeProm);
-            Controls.Add(txtMatEt);
             Controls.Add(txtId);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -215,6 +231,7 @@
             Name = "FrmInscription";
             Text = "FrmInscription";
             Load += FrmInscription_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvInscription).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -229,13 +246,14 @@
         private Label label6;
         private Label label7;
         private TextBox txtId;
-        private TextBox txtMatEt;
-        private TextBox txtCodeProm;
         private TextBox txtDateInscr;
         private TextBox txtObserv;
         private Button btnAjouterInscription;
         private Button btnModifierInscription;
         private Button btnSupprimerInscription;
         private ComboBox cmbAnneeAcad;
+        private DataGridView dgvInscription;
+        private ComboBox cmbMat;
+        private ComboBox cmbProm;
     }
 }

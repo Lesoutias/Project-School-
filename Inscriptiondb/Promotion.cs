@@ -17,24 +17,15 @@ namespace Inscriptiondb
         public int Ajouter(Promotion promotion)
         {
             int resultat = 0;
-            string requete = "INSERT INTO tPromotion (option1, designation) " +
-                 "VALUES('" + promotion.Option1 + "', '" + promotion.Designation + "')";
+            string requete = "INSERT INTO tPromotion (option1, designation) VALUES (@option1, @designation)";
 
             if (DataAccess.Instance.OpenConection())
             { 
                 SqlCommand cmd = new SqlCommand(requete, DataAccess.Instance.Conn);
-                try
-                {
-                    resultat = cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Erreur lors de l'ajout de la promotion : " + ex.Message);
-                }
-                finally
-                {
-                    DataAccess.Instance.Conn.Close();
-                }
+                cmd.Parameters.AddWithValue("@option1", promotion.Option1);
+                cmd.Parameters.AddWithValue("@designation", promotion.Designation);
+                resultat = cmd.ExecuteNonQuery();
+                cmd.Dispose();
             }
             return resultat;
         }
@@ -42,84 +33,58 @@ namespace Inscriptiondb
         public int Modifier(Promotion promotion)
         {
             int resultat = 0;
-            string requete = "UPDATE tPromotion SET designation='" + promotion.Designation
-             + "', option1='" + promotion.Option1
-             + "' where code = '" + promotion.Code + "'";
+            string requete = "update tPromotion set designation = @designation, option1 = @option1 where code = @code";
 
             if (DataAccess.Instance.OpenConection())
             {
-                SqlCommand cmd = new SqlCommand(requete, DataAccess.Instance.Conn);
-                try
+                using (SqlCommand cmd = new SqlCommand(requete, DataAccess.Instance.Conn))
                 {
+                    cmd.Parameters.AddWithValue("@code", promotion.Code);
+                    cmd.Parameters.AddWithValue("@option1", promotion.Option1);
+                    cmd.Parameters.AddWithValue("@designation", promotion.Designation);
                     resultat = cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show ("Erreur lors de l'ajout de la promotion : " + ex.Message);
-                }
-                finally
-                {
-                DataAccess.Instance.Conn.Close();
                 }
             }
             return resultat;
         }
 
-        public int Supprimer(int codeProm)
+        public int Supprimer(Promotion promotion)
         {
             int resultat = 0;
-            string requete = "delete from tPromotion where code ='" + codeProm + "'";
+            string requete = "delete from tPromotion where code = @code";
 
             if (DataAccess.Instance.OpenConection())
             {
-                SqlCommand cmd = new SqlCommand(requete, DataAccess.Instance.Conn);
-                try
+                using (SqlCommand cmd = new SqlCommand(requete, DataAccess.Instance.Conn))
                 {
+                    cmd.Parameters.AddWithValue("@code", promotion.Code);
                     resultat = cmd.ExecuteNonQuery();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erreur lors de l'ajout de la promotion : " + ex.Message);
-                }
-                finally
-                {
-                    DataAccess.Instance.Conn.Close();
-                }
+                
             }
             return resultat;
         }
 
         public List<Promotion> getPromotion()
         {
-            List<Promotion> promotions = new List<Promotion>();
+            List<Promotion> list = new List<Promotion>();
             string requete = "select * from tpromotion";
             if (DataAccess.Instance.OpenConection())
             {
                 SqlCommand cmd = new SqlCommand(requete, DataAccess.Instance.Conn);
-                try
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        Promotion promotion = new Promotion
-                        {
-                            Code = reader.GetInt32(0),
-                            Option1 = reader.GetInt32(1),
-                            Designation = reader.GetString(2)
-                        };
-                        promotions.Add(promotion);
-                    }
+                    Promotion promotion = new Promotion();
+                    promotion.Code = Convert.ToInt32(reader["code"]);
+                    promotion.Designation = Convert.ToString(reader["designation"]);
+                    promotion.Option1 = Convert.ToInt32(reader["option1"]);
+                    list.Add(promotion);
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Erreur lors de la récupération des promotions : " + ex.Message);
-                }
-                finally
-                {
-                    DataAccess.Instance.Conn.Close();
-                }
+                reader.Close();
+                cmd.Dispose();
             }
-            return promotions;
+            return list;
         }
     }
 }

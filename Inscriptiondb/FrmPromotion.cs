@@ -95,7 +95,7 @@ namespace Inscriptiondb
         {
             Promotion promotion = new Promotion();
             promotion.Code = int.Parse(txtCode.Text);
-            int resultat = promotion.Supprimer(int.Parse(txtCode.Text));
+            int resultat = promotion.Supprimer(promotion);
             if (resultat > 0)
             {
                 MessageBox.Show("Promotion supprimée avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);

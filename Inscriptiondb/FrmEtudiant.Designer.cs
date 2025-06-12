@@ -46,6 +46,8 @@
             btnAjouter = new Button();
             btnModifier = new Button();
             btnSupprimer = new Button();
+            dgvEtudiant = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvEtudiant).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -134,42 +136,42 @@
             // 
             txtMatricule.Location = new Point(352, 98);
             txtMatricule.Name = "txtMatricule";
-            txtMatricule.Size = new Size(459, 27);
+            txtMatricule.Size = new Size(350, 27);
             txtMatricule.TabIndex = 8;
             // 
             // txtNom
             // 
             txtNom.Location = new Point(352, 161);
             txtNom.Name = "txtNom";
-            txtNom.Size = new Size(459, 27);
+            txtNom.Size = new Size(350, 27);
             txtNom.TabIndex = 9;
             // 
             // txtPostNom
             // 
             txtPostNom.Location = new Point(352, 229);
             txtPostNom.Name = "txtPostNom";
-            txtPostNom.Size = new Size(459, 27);
+            txtPostNom.Size = new Size(350, 27);
             txtPostNom.TabIndex = 10;
             // 
             // txtPrenom
             // 
             txtPrenom.Location = new Point(352, 297);
             txtPrenom.Name = "txtPrenom";
-            txtPrenom.Size = new Size(459, 27);
+            txtPrenom.Size = new Size(350, 27);
             txtPrenom.TabIndex = 11;
             // 
             // txtDateNaiss
             // 
             txtDateNaiss.Location = new Point(352, 439);
             txtDateNaiss.Name = "txtDateNaiss";
-            txtDateNaiss.Size = new Size(459, 27);
+            txtDateNaiss.Size = new Size(350, 27);
             txtDateNaiss.TabIndex = 12;
             // 
             // txtLieuNaiss
             // 
             txtLieuNaiss.Location = new Point(352, 515);
             txtLieuNaiss.Name = "txtLieuNaiss";
-            txtLieuNaiss.Size = new Size(459, 27);
+            txtLieuNaiss.Size = new Size(350, 27);
             txtLieuNaiss.TabIndex = 13;
             // 
             // cmbEtatCivil
@@ -177,14 +179,14 @@
             cmbEtatCivil.FormattingEnabled = true;
             cmbEtatCivil.Location = new Point(355, 370);
             cmbEtatCivil.Name = "cmbEtatCivil";
-            cmbEtatCivil.Size = new Size(456, 28);
+            cmbEtatCivil.Size = new Size(347, 28);
             cmbEtatCivil.TabIndex = 14;
             cmbEtatCivil.SelectedIndexChanged += cmbEtatCivil_SelectedIndexChanged;
             // 
             // btnAjouter
             // 
             btnAjouter.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAjouter.Location = new Point(361, 596);
+            btnAjouter.Location = new Point(297, 596);
             btnAjouter.Name = "btnAjouter";
             btnAjouter.Size = new Size(111, 41);
             btnAjouter.TabIndex = 15;
@@ -195,28 +197,41 @@
             // btnModifier
             // 
             btnModifier.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModifier.Location = new Point(526, 596);
+            btnModifier.Location = new Point(453, 596);
             btnModifier.Name = "btnModifier";
             btnModifier.Size = new Size(110, 41);
             btnModifier.TabIndex = 16;
             btnModifier.Text = "Modifier";
             btnModifier.UseVisualStyleBackColor = true;
+            btnModifier.Click += btnModifier_Click;
             // 
             // btnSupprimer
             // 
             btnSupprimer.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSupprimer.Location = new Point(690, 596);
+            btnSupprimer.Location = new Point(613, 596);
             btnSupprimer.Name = "btnSupprimer";
             btnSupprimer.Size = new Size(121, 41);
             btnSupprimer.TabIndex = 17;
             btnSupprimer.Text = "Supprimer";
             btnSupprimer.UseVisualStyleBackColor = true;
+            btnSupprimer.Click += btnSupprimer_Click;
+            // 
+            // dgvEtudiant
+            // 
+            dgvEtudiant.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEtudiant.Location = new Point(731, 98);
+            dgvEtudiant.Name = "dgvEtudiant";
+            dgvEtudiant.RowHeadersWidth = 51;
+            dgvEtudiant.Size = new Size(840, 444);
+            dgvEtudiant.TabIndex = 18;
+            dgvEtudiant.CellDoubleClick += dgvEtudiant_CellDoubleClick;
             // 
             // FrmEtudiant
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1076, 688);
+            ClientSize = new Size(1583, 688);
+            Controls.Add(dgvEtudiant);
             Controls.Add(btnSupprimer);
             Controls.Add(btnModifier);
             Controls.Add(btnAjouter);
@@ -238,6 +253,7 @@
             Name = "FrmEtudiant";
             Text = "FrmEtudiant";
             Load += FrmEtudiant_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvEtudiant).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -262,5 +278,6 @@
         private Button btnAjouter;
         private Button btnModifier;
         private Button btnSupprimer;
+        private DataGridView dgvEtudiant;
     }
 }

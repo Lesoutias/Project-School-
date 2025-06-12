@@ -32,7 +32,7 @@ namespace Inscriptiondb
         {
             //try
             //{
-                string connectionString = "data source = DESKTOP-T8O1S1A\\SQLEXPRESS ;initial catalog = BdInscription   ;  persist security info = True; Integrated Security = SSPI; encrypt=false";
+                string connectionString = "data source = DESKTOP-T8O1S1A\\SQLEXPRESS ;initial catalog = BdInscription;  persist security info = True; Integrated Security = SSPI; encrypt=false";
                 Conn = new SqlConnection(connectionString);
                 Conn.Open();
                 return true;
